@@ -25,6 +25,17 @@ namespace Full_GRASP_And_SOLID.Library
             this.steps.Remove(step);
         }
 
+        // Como es Recipe quien tiene a los Step, según EXPERT debe ser esta quien calcule el costo total
+        // de la receta segun todos los Step.
+        public double CostoTotal()
+        {
+            double CostoTotal = 0;
+            foreach (Step step in this.steps)
+            {
+                CostoTotal += step.GetProductionCost();
+            }
+            return CostoTotal;
+        }
         public void PrintRecipe()
         {
             Console.WriteLine($"Receta de {this.FinalProduct.Description}:");
@@ -33,6 +44,7 @@ namespace Full_GRASP_And_SOLID.Library
                 Console.WriteLine($"{step.Quantity} de '{step.Input.Description}' " +
                     $"usando '{step.Equipment.Description}' durante {step.Time}");
             }
+            Console.WriteLine($"El costo total es: {this.CostoTotal()}");
         }
     }
 }

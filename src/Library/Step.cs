@@ -23,5 +23,15 @@ namespace Full_GRASP_And_SOLID.Library
         public int Time { get; set; }
 
         public Equipment Equipment { get; set; }
+
+        // Como Step contiene a los objetos Equipment y Product, por EXPERT es Step quien
+        // debe calcular el costo total del paso actual.
+        public double GetProductionCost()
+        {
+            double CostoInsumos = this.Input.UnitCost;
+            double CostoEquipamiento = this.Equipment.HourlyCost * this.Time/3600;
+            double CostoTotal = CostoInsumos + CostoEquipamiento;
+            return CostoTotal;
+        }
     }
 }

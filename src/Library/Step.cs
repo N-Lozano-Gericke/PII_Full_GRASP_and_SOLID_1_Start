@@ -29,7 +29,7 @@ namespace Full_GRASP_And_SOLID.Library
         {
             get
             {
-                return (this.Quantity * this.Input.UnitCost) + (this.Equipment.HourlyCost * this.Time / 3600);
+                return (this.Input.UnitCost) + (this.Equipment.HourlyCost * this.Time / 3600);
             }
         }
     }

@@ -25,7 +25,7 @@ namespace Full_GRASP_And_SOLID.Library
             this.steps.Remove(step);
         }
 
-        //Receipe se encarga de calcular el costo total en base a los costos de cada Step. Expert.
+        //Recipe se encarga de calcular el costo total en base a los costos de cada Step. Expert.
         public double GetProductionCost
         {
             get
@@ -48,6 +48,7 @@ namespace Full_GRASP_And_SOLID.Library
                 Console.WriteLine($"{step.Quantity} de '{step.Input.Description}' " +
                     $"usando '{step.Equipment.Description}' durante {step.Time}");
             }
+            //Agrego imprimir el costo total de produccion
             Console.WriteLine($"Total: {this.GetProductionCost}");
         }
     }

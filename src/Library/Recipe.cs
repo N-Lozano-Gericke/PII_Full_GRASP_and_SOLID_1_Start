@@ -47,8 +47,8 @@ namespace Full_GRASP_And_SOLID.Library
             {
                 Console.WriteLine($"{step.Quantity} de '{step.Input.Description}' " +
                     $"usando '{step.Equipment.Description}' durante {step.Time}");
-                Console.WriteLine($"Total: {this.GetProductionCost}");
             }
+            Console.WriteLine($"Total: {this.GetProductionCost}");
         }
     }
 }
